@@ -37,8 +37,12 @@ extern "C" void load() {
     QuestUI::Init();
     QuestUI::Register::RegisterMainMenuModSettingsViewController<AIMod::UI::AIModUI*>(modInfo, "AI Mod");
 
+    
     getLogger().info("Installing hooks...");
-    // Install our hooks (none defined yet)
+
+    auto& logger = getLogger();
+    Hooks::InstallHooks(logger);
+
     getLogger().info("Installed all hooks!");
 }
 
