@@ -1,5 +1,8 @@
 #include "main.hpp"
 #include "ModConfig.hpp"
+#include "questui/shared/QuestUI.hpp"
+
+#include "UI/ModUI.hpp"
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -31,6 +34,8 @@ extern "C" void load() {
     il2cpp_functions::Init();
 
     getModConfig().Init(modInfo);
+    QuestUI::Init();
+    QuestUI::Register::RegisterMainMenuModSettingsViewController<AIMod::UI::AIModUI*>(modInfo, "AI Mod");
 
     getLogger().info("Installing hooks...");
     // Install our hooks (none defined yet)
