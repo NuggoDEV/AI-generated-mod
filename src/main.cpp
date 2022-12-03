@@ -1,6 +1,7 @@
 #include "main.hpp"
 #include "ModConfig.hpp"
 #include "questui/shared/QuestUI.hpp"
+#include "Hooks.hpp"
 
 #include "UI/ModUI.hpp"
 
