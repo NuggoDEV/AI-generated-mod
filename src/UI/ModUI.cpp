@@ -7,7 +7,7 @@ using namespace QuestUI;
 using namespace AIMod::UI;
 DEFINE_TYPE(AIMod::UI, AIModUI);
 
-void AIModUI::DidActivate(bool firstActivation) 
+void AIModUI::DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) 
 {
     if (firstActivation) {
         auto scrollView = BeatSaberUI::CreateScrollView(get_transform());
@@ -20,4 +20,4 @@ void AIModUI::DidActivate(bool firstActivation)
 }
 
 
-// Written by AI
+// Written mostly by AI
